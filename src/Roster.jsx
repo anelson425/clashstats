@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BootstrapTable from 'react-bootstrap-table-next';
-// import "../node_modules/react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import Img from 'react-image'
 
 class Roster extends Component {
   constructor(props) {
@@ -22,13 +22,26 @@ class Roster extends Component {
       dataField: 'tag',
       text: 'Tag',
       hidden: true
-    },{
+    }, {
       dataField: 'name',
       text: 'Name',
       sort: true
     }, {
       dataField: 'role',
       text: 'Role',
+      sort: true
+    }, {
+      dataField: 'trophies',
+      text: 'League',
+      formatter: (cell, row) => <Img src={row.league.iconUrls.small} />,
+      sort: true
+    }, {
+      dataField: 'donations',
+      text: 'Donations',
+      sort: true
+    }, {
+      dataField: 'donationsReceived',
+      text: 'Donations Received',
       sort: true
     }];
 
